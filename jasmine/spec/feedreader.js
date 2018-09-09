@@ -31,6 +31,11 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+
+         // Phrase within single quotes can be anything, but keep it short and descriptive
+         // The for loop run the code for each item in the allFeeds array
+         // The 1st line checks that the feed.url is defined; undefined = error
+         // The 2nd line checks the value's length is greater than 0; less than 0 = error
          it('url defined', function() {
            for(let feed of allFeeds) {
              expect(feed.url).toBeDefined();
