@@ -48,7 +48,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         
+
          it('name defined', function() {
            for (let feed of allFeeds) {
              expect(feed.name).toBeDefined();
@@ -59,18 +59,36 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
+    describe('The Menu', function() {
+      /* TODO: Write a test that ensures the menu element is
+      * hidden by default. You'll have to analyze the HTML and
+      * the CSS to determine how we're performing the
+      * hiding/showing of the menu element.
+      */
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+      /* All files were provided by Udacity so in order to check if there is a toggle
+      * class for the menu to disappear/reappear upon click, we need to inspect the
+      * files; either through the files provided or by inspecting the page using the dev
+      * tools. After playing around on the page, it's clear that the menu button toggles.
+      * Now, we need to check what the exact name of the toggle class is so we can refer
+      * to it in the tests.
+      */
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+      // Here we're assigning retrieving the oody element from the DOM and assiging it to the const 'body'
+      // The 2nd line of code checks to see if the body contains the class 'menu-hidden'
+      it('hidden', function() {
+        const body = document.querySelector('body');
+        expect(body.classList.contains('menu-hidden')).toBe(true);
+      });
+
+
+      /* TODO: Write a test that ensures the menu changes
+      * visibility when the menu icon is clicked. This test
+      * should have two expectations: does the menu display when
+      * clicked and does it hide when clicked again.
+      */
+    });
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
