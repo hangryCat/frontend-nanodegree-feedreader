@@ -114,6 +114,24 @@ $(function() {
       * Remember, loadFeed() is asynchronous so this test will require
       * the use of Jasmine's beforeEach and asynchronous done() function.
       */
+
+      // All code within Jasmine's beforeEach function will run before the expect test functions
+      // The 0 in loadFeed is the first index
+      // The spec will not run until Jasmine's done() function is called in the beforeEach
+        // The specs will not complete until done() is called
+      // In apps.js, the if statment has a parameter cb (callback) to run as a method cb()
+      // By putting 'done' here, it will pass through and lets the Jasmine test know that the beforeEach function is completed so that the rest of the test can continue
+      beforeEach(function(done){
+        loadFeed(0, done);
+      });
+
+      // Now that the beforeEach function is finished, the following it function runs
+      // It will check that the element within the feed container has at least 1 elements
+        // Which is why we use the length method
+      it('completed work', function() {
+        const feed = document.querySelector('.feed');
+        expect(feed.children.length > 0).toBe(true);
+      });
     });
 
 
