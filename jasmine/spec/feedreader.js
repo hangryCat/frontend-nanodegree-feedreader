@@ -87,6 +87,22 @@ $(function() {
       * should have two expectations: does the menu display when
       * clicked and does it hide when clicked again.
       */
+
+      // By using the click method, it will click the menu icon
+      // This should toggle the menu-hidden class off (remember, default is ON)
+      // After the click, the expect function checks the body's menu-hidden class = false
+        // If it's still true, then an error will pursue
+      // The 2nd menu.click() will click the menu icon again  which should close the menu
+      // All of this is happen asynchonously
+        // The user will not see the menu toggling
+      it('toggles on/off', function() {
+        const body = document.querySelector('body');
+        const menu = document.querySelector('.menu-icon-link');
+
+        menu.click();
+        expect(body.classList.contains('menu-hidden')).toBe(false);
+        menu.click();
+      });
     });
 
 
