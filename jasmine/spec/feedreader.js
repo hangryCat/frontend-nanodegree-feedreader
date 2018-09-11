@@ -11,7 +11,7 @@ $(function() {
     /* This is our first test - it tests to make sure that the
      * allFeeds variable has been defined and that it is not
      * empty.
-    */
+     */
     it('are defined', function() {
       expect(allFeeds).toBeDefined();
       expect(allFeeds.length).not.toBe(0);
