@@ -1,4 +1,24 @@
-# Project Overview
+# Summary 
+
+By using Jasmine, several tests were implemented to make sure the site worked appropriately. 
+
+Tests include:
+1. Checking if all URL values are defined
+2. Making sure the URL links are at least 1 character long
+3. Whether the class `menu-hidden` toggles on/off
+4. Making sure there are entries within the feed container
+5. Whether the content of the feeds differ
+
+# View Project
+
+Click on the link to view the live site:
+https://hangrycat.github.io/frontend-nanodegree-feedreader/
+
+To copy or clone this repository, use the following command in your terminal:
+`git clone https://github.com/hangryCat/frontend-nanodegree-feedreader.git`
+
+## Udacity's Instructions
+## Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
