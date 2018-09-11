@@ -130,7 +130,7 @@ $(function() {
     // It will check that the element within the feed container has at least 1 elements
     // Which is why we use the length method
     it('completed work', function() {
-      const feed = document.querySelector('.feed');
+      const feed = document.querySelector('.feed .entry');
       expect(feed.children.length > 0).toBe(true);
     });
   });
