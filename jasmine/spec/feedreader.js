@@ -137,11 +137,41 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selector', function() {
+      const feed = document.querySelector('.feed');
+      const firstFeed = [];
+      const secondFeed = [];
+
       /* TODO: Write a test that ensures when a new feed is loaded
       * by the loadFeed function that the content actually changes.
       * Remember, loadFeed() is asynchronous.
       */
 
-      
+      beforeEach(function(done) {
+        // Refers to loadFeed(0) only
+        // The Array.from() copies an array
+        // The forEach() goes through each item in the Array
+        // Each item is pushed into the empty array declared above 'firstFeed'
+        // loadFeed(1) loads the page to the 2nd feed
+        // The done parameter tells Jasmine that the beforeEach() is completed
+        loadFeed(0);
+        Array.from(feed.children).forEach(function(item) {
+          firstFeed.push(item.innerText);
+        });
+        loadFeed(1, done);
+      });
+
+      it('content changes', function() {
+        // This it function refers to loadFeed(1)
+        Array.from(feed.children).forEach(function(item, index) {
+          // Push headline text of 2nd page to secondFeed variable
+          secondFeed.push(item.innerText);
+          // Print to console to make sure everything went through
+          console.log(firstFeed[index], secondFeed[index], firstFeed[index] === secondFeed[index]);
+          // This expectation tests that the firstFeed != secondFeed
+          expect(firstFeed[index]).not.toBe(secondFeed[index]);
+        });
+        // Loads the page back to the first feed
+        loadFeed(0);
+      });
     });
-}());
+});
