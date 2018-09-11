@@ -154,11 +154,12 @@ $(function() {
       // Each item is pushed into the empty array declared above 'firstFeed'
       // loadFeed(1) loads the page to the 2nd feed
       // The done parameter tells Jasmine that the beforeEach() is completed
-      loadFeed(0);
-      Array.from(feed.children).forEach(function(item) {
-        firstFeed.push(item.innerText);
+      loadFeed(0, function() {
+        Array.from(feed.children).forEach(function(item) {
+          firstFeed.push(item.innerText);
+        });
+        loadFeed(1, done);
       });
-      loadFeed(1, done);
     });
 
     it('content changes', function() {
